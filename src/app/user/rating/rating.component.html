@@ -1,3 +1,127 @@
-<p>
-  rating works!
-</p>
+<ngb-tabset>
+  <ngb-tab title="My Ratings">
+    <ng-template ngbTabContent>
+      <br/>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Quality</h5>
+              <h6 class="card-subtitle mb-2 text-muted text-uppercase">CODE REVIEWS & FEEDBACK</h6>
+              <p>
+                <ngb-progressbar [showValue]="true" type="success" [striped]="true" [value]="75"></ngb-progressbar>
+              </p>
+              <!-- <p class="card-text">
+                    <li>Ensure team is following set coding standards by reviewing their code</li>
+                    <li>Provide constructive feedback frequently</li>
+                    <li>Recommend tools that can help team to perform repetitive development tasks efficiently</li>
+                  </p> -->
+              <button type="button" class="btn btn-sm btn-outline-info" (click)="open(content)">
+                <i class="material-icons align-middle">stars</i>
+                <span class="align-middle">Add Rating</span>
+              </button>
+            </div>
+          </div>
+          <!-- card -->
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Value Addition</h5>
+              <h6 class="card-subtitle mb-2 text-muted text-uppercase">RESUABLE SOLUTIONS</h6>
+              <p>
+                <ngb-progressbar [showValue]="true" type="danger" [striped]="true" [value]="35"></ngb-progressbar>
+              </p>
+              <!-- <p class="card-text">
+                    <li>Analyse existing projects for major challenges</li>
+                    <li>Communicate the analysis effectively to client and seek client's approval</li>
+                    <li>Provide proper instructions & guidance to the team to build reusable solutions</li>
+                  </p> -->
+              <button type="button" class="btn btn-sm btn-outline-info" (click)="open(content)">
+                <i class="material-icons align-middle">stars</i>
+                <span class="align-middle">Add Rating</span>
+              </button>
+            </div>
+          </div>
+          <!-- card -->
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Pre-sales</h5>
+              <h6 class="card-subtitle mb-2 text-muted text-uppercase">POC & R&D TEAMS</h6>
+              <p>
+                <ngb-progressbar [showValue]="true" type="warning" [striped]="true" [value]="60"></ngb-progressbar>
+              </p>
+              <!-- <p class="card-text">
+                    <li>Ensure team is following set coding standards by reviewing their code</li>
+                    <li>Provide constructive feedback frequently</li>
+                    <li>Recommend tools that can help team to perform repetitive development tasks efficiently</li>
+                  </p> -->
+              <button type="button" class="btn btn-sm btn-outline-info" (click)="open(content)">
+                <i class="material-icons align-middle">stars</i>
+                <span class="align-middle">Add Rating</span>
+              </button>
+            </div>
+          </div>
+          <!-- card -->
+        </div>
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Review Ratings">
+    <ng-template ngbTabContent>
+
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Add Rating</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <!-- modal-header -->
+  <div class="modal-body">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Quality</h5>
+      </div>
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted text-uppercase">CODE REVIEWS & FEEDBACK</h6>
+        <p class="card-text">
+          <li>Ensure team is following set coding standards by reviewing their code</li>
+          <li>Provide constructive feedback frequently</li>
+          <li>Recommend tools that can help team to perform repetitive development tasks efficiently</li>
+        </p>
+        <span class="font-weight-bold">Current rating</span>
+        <p>
+          <ngb-progressbar [showValue]="true" type="success" [striped]="true" [value]="75"></ngb-progressbar>
+        </p>
+        <div class="form-group">
+          <label for="ratingSelect">Select rating</label>
+          <select class="form-control" id="ratingSelect">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <!-- form-group -->
+        <div class="form-group">
+          <label for="commentsTextArea">Comments</label>
+          <textarea class="form-control" id="commentsTextArea" rows="3"></textarea>
+        </div>
+        <!-- form-group -->
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="c('Close click')">Save</button>
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+  <!-- modal-footer -->
+</ng-template>
