@@ -1,26 +1,25 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="#">SCORECARD</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <div class="nav-spacer"></div>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Dashboard</a>
+        <a class="nav-link" routerLink="/user/dashboard" routerLinkActive>Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Ratings</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Settings</a>
+        <a class="nav-link" routerLink="./rating" routerLinkActive>Ratings</a>
       </li>
     </ul>
     <div ngbDropdown class="d-inline-block">
       <button class="btn btn-outline-success" id="userDrp" ngbDropdownToggle>user@example.com</button>
       <div ngbDropdownMenu aria-labelledby="userDrp">
         <button class="dropdown-item">My Profile</button>
-        <button class="dropdown-item">Logout</button>
+        <a class="dropdown-item" routerLink="/login">Logout</a>
       </div>
     </div>
   </div>

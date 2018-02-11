@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
     CommonModule,
     NgbModule.forRoot()
   ],
-  declarations: [NavbarComponent, LoginComponent, HomeComponent],
+  declarations: [LoginComponent],
   exports: [
-    NavbarComponent
+    NgbModule
   ]
 })
 export class CoreModule { }

@@ -3,11 +3,14 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { RouterModule } from '@angular/router';
 
 import { CoreModule } from './core/core.module';
+import { UserModule } from './user/user.module';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
+import { APP_ROUTES } from './app.routes';
 
 
 @NgModule({
@@ -19,8 +22,10 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    RouterModule.forRoot(APP_ROUTES),
 
-    CoreModule
+    CoreModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
